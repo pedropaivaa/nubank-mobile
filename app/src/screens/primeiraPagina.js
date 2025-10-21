@@ -1,18 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   SafeAreaView,
   StyleSheet,
   View,
   Text,
   TouchableOpacity,
-} from 'react-native';
-import Icon from 'react-native-vector-icons/Feather';
+} from "react-native";
+import Icon from "react-native-vector-icons/Feather";
 
-const NUBANK_PRIMARY_COLOR = '#820AD1';
-const NUBANK_BACKGROUND_COLOR = '#FFFFFF';
-const NUBANK_BUTTON_BACKGROUND = '#F0F1F5';
-const NUBANK_TEXT_COLOR = '#000000';
-const NUBANK_GRAY_TEXT_COLOR = '#555';
+const NUBANK_PRIMARY_COLOR = "#820AD1";
+const NUBANK_BACKGROUND_COLOR = "#FFFFFF";
+const NUBANK_BUTTON_BACKGROUND = "#F0F1F5";
+const NUBANK_TEXT_COLOR = "#000000";
+const NUBANK_GRAY_TEXT_COLOR = "#555";
 
 const NubankHomeScreen = () => {
   const [isBalanceVisible, setIsBalanceVisible] = useState(true);
@@ -26,11 +26,21 @@ const NubankHomeScreen = () => {
         </TouchableOpacity>
         <Text style={styles.userName}>Olá, Usuário</Text>
         <View style={styles.headerIcons}>
-          <TouchableOpacity onPress={() => setIsBalanceVisible(!isBalanceVisible)}>
-            <Icon name={isBalanceVisible ? 'eye' : 'eye-off'} size={26} color={NUBANK_BACKGROUND_COLOR} />
+          <TouchableOpacity
+            onPress={() => setIsBalanceVisible(!isBalanceVisible)}
+          >
+            <Icon
+              name={isBalanceVisible ? "eye" : "eye-off"}
+              size={26}
+              color={NUBANK_BACKGROUND_COLOR}
+            />
           </TouchableOpacity>
           <TouchableOpacity>
-            <Icon name="help-circle" size={26} color={NUBANK_BACKGROUND_COLOR} />
+            <Icon
+              name="help-circle"
+              size={26}
+              color={NUBANK_BACKGROUND_COLOR}
+            />
           </TouchableOpacity>
           <TouchableOpacity>
             <Icon name="mail" size={26} color={NUBANK_BACKGROUND_COLOR} />
@@ -42,7 +52,7 @@ const NubankHomeScreen = () => {
       <View style={styles.balanceSection}>
         <Text style={styles.sectionTitle}>Conta</Text>
         <Text style={styles.balanceValue}>
-          {isBalanceVisible ? 'R$ 1.234,56' : '•••••'}
+          {isBalanceVisible ? "R$ 1.234,56" : "•••••"}
         </Text>
       </View>
 
@@ -75,7 +85,9 @@ const NubankHomeScreen = () => {
         <Text style={styles.sectionTitle}>Cartão de crédito</Text>
         <Text style={styles.invoiceLabel}>Fatura atual</Text>
         <Text style={styles.invoiceValue}>R$ 542,30</Text>
-        <Text style={styles.invoiceDueDate}>Limite disponível de R$ 2.500,00</Text>
+        <Text style={styles.invoiceDueDate}>
+          Limite disponível de R$ 2.500,00
+        </Text>
       </View>
     </SafeAreaView>
   );
@@ -88,9 +100,9 @@ const styles = StyleSheet.create({
   },
   // Header
   header: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
     paddingVertical: 20,
     paddingHorizontal: 20,
     backgroundColor: NUBANK_PRIMARY_COLOR,
@@ -99,20 +111,20 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
     borderRadius: 25,
-    backgroundColor: 'rgba(255,255,255,0.2)',
-    justifyContent: 'center',
-    alignItems: 'center',
+    backgroundColor: "rgba(255,255,255,0.2)",
+    justifyContent: "center",
+    alignItems: "center",
   },
   userName: {
     color: NUBANK_BACKGROUND_COLOR,
     fontSize: 18,
-    fontWeight: 'bold',
-    position: 'absolute',
+    fontWeight: "bold",
+    position: "absolute",
     left: 80,
   },
   headerIcons: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     gap: 20,
   },
   // Balance
@@ -123,35 +135,35 @@ const styles = StyleSheet.create({
   },
   sectionTitle: {
     fontSize: 20,
-    fontWeight: '500',
+    fontWeight: "500",
     color: NUBANK_TEXT_COLOR,
   },
   balanceValue: {
     fontSize: 24,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginTop: 8,
     color: NUBANK_TEXT_COLOR,
   },
   // Actions
   actionsContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
+    flexDirection: "row",
+    justifyContent: "space-around",
     backgroundColor: NUBANK_BACKGROUND_COLOR,
     paddingVertical: 20,
   },
   actionButton: {
-    alignItems: 'center',
+    alignItems: "center",
   },
   actionButtonLabel: {
     marginTop: 8,
     fontSize: 13,
-    fontWeight: '600',
+    fontWeight: "600",
     color: NUBANK_TEXT_COLOR,
   },
   // My Cards
   myCardsButton: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     backgroundColor: NUBANK_BUTTON_BACKGROUND,
     marginHorizontal: 20,
     padding: 15,
@@ -161,7 +173,7 @@ const styles = StyleSheet.create({
   myCardsButtonText: {
     marginLeft: 15,
     fontSize: 14,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     color: NUBANK_TEXT_COLOR,
   },
   // Invoice
@@ -178,7 +190,7 @@ const styles = StyleSheet.create({
   },
   invoiceValue: {
     fontSize: 24,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     color: NUBANK_TEXT_COLOR,
     marginTop: 4,
   },
