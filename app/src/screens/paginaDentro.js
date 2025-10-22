@@ -142,13 +142,7 @@ function NubankAppScreen() {
   const [isBalanceVisible, setIsBalanceVisible] = useState(true);
 
   return (
-    // SafeAreaView é a "tag" correta para evitar a barra de status
     <SafeAreaView style={styles.safeArea}>
-      
-      {/* ⬇️ MUDANÇA AQUI ⬇️
-        Adicionado 'contentContainerStyle' para o conteúdo não 
-        ficar escondido ATRÁS da barra flutuante.
-      */}
       <ScrollView contentContainerStyle={{ paddingBottom: 100 }}>
         <Header
           isBalanceVisible={isBalanceVisible}
@@ -160,14 +154,12 @@ function NubankAppScreen() {
         <InvoiceSection />
       </ScrollView>
 
-      {/* A Barra Inferior fica FORA do ScrollView para ficar fixa */}
       <BottomBar />
     </SafeAreaView>
   );
 }
 
-// --- PONTO DE ENTRADA DO APP (App.js) ---
-// O seu index.js chama este 'App'
+
 export default function App() {
   return (
     <SafeAreaProvider>
@@ -176,16 +168,14 @@ export default function App() {
   );
 }
 
-// --- ESTILOS ---
+
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
     backgroundColor: NUBANK_PRIMARY_COLOR, // Pinta a área da barra de status
   },
-  // O 'container' principal foi removido do JS,
-  // pois o 'safeArea' agora faz esse papel.
-  
-  // Header
+
+
   header: {
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -213,7 +203,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     gap: 20,
   },
-  // Balance
   balanceSection: {
     backgroundColor: NUBANK_BACKGROUND_COLOR,
     paddingHorizontal: 20,
@@ -230,7 +219,6 @@ const styles = StyleSheet.create({
     marginTop: 8,
     color: NUBANK_TEXT_COLOR,
   },
-  // Actions
   actionsContainer: {
     flexDirection: 'row',
     justifyContent: 'space-around',
@@ -246,7 +234,7 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     color: NUBANK_TEXT_COLOR,
   },
-  // My Cards
+
   myCardsButton: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -262,13 +250,11 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: NUBANK_TEXT_COLOR,
   },
-  // Invoice
   invoiceSection: {
     backgroundColor: NUBANK_BACKGROUND_COLOR,
     paddingHorizontal: 20,
     paddingVertical: 20,
     marginTop: 10,
-    // O 'paddingBottom' foi movido para o 'contentContainerStyle' do ScrollView
   },
   invoiceLabel: {
     fontSize: 14,
@@ -287,20 +273,18 @@ const styles = StyleSheet.create({
     marginTop: 4,
   },
 
-  // ⬇️ MUDANÇA AQUI ⬇️
-  // Bottom Bar (Estilo Flutuante)
   bottomBar: {
-    position: 'absolute', // Faz flutuar
-    bottom: 16,           // Distância do fundo
-    left: 16,             // Distância da esquerda
-    right: 16,            // Distância da direita
+    position: 'absolute',
+    bottom: 16,           
+    left: 16,             
+    right: 16,            
     
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
     backgroundColor: NUBANK_BACKGROUND_COLOR,
     paddingVertical: 14,  
-    borderRadius: 25,     // Cantos arredondados
+    borderRadius: 25,     
     
     // Sombra para Android
     elevation: 8,

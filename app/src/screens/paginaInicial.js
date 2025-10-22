@@ -13,10 +13,6 @@ export default function paginaInicial() {
         source={require("../../assets/logo.png")} 
       />
 
-      <Pressable style={styles.botaoEntrar}>
-        <Texto text="Entrar na conta" style={styles.textoBotao} />
-      </Pressable>
-
       <StatusBar style="light" />
     </View>
   );
