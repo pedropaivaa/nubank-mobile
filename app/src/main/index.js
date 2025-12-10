@@ -7,7 +7,7 @@ import paginaInicial from '../screens/paginaInicial';
 import App from '../screens/paginaDentro';
 import longinScreen from '../screens/longinScreen'; // Eu vi que você também tem esta tela
 
-
+// sdfruhuihsfsdnfisjf
 
 const TelaParaMostrar = paginaInicial; 
 //const TelaParaMostrar = App;
